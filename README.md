@@ -34,7 +34,7 @@ We hope to improve this pipeline to be generalized across all text data, simplif
     python3 -m venv env
     ```
     
-4. Activate Virtual environment (env):
+4. Activate Virtual environment (env):  
    For Mac OS
     ```shell script
     source env/bin/activate
@@ -43,7 +43,7 @@ We hope to improve this pipeline to be generalized across all text data, simplif
    ```shell script
     env\Scripts\activate
     ```
-5. Install requirements:
+5. Install requirements:  
     ```shell script
     pip install -r requirements.txt
     ```
