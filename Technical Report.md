@@ -240,8 +240,8 @@ Upon further investigation we found that these 2 subreddits have either no commu
 <p align="center"> Fig. 17 </p>
 
  
-This de-emphasising of censorship ties into looser moderation, leading to more toxic and hateful posts and comments being allowed on to the subreddit. This then leads to more users being encouraged to join in and post increasingly toxic and hateful posts and comments, which in turn do not get moderated. Hence, this cycle perpetuates and amplifies toxicity and hatefulness 
-![Fig. 18](https://github.com/rhyden-kx/DSA4264/blob/main/images/ToxicCycle.png).
+This de-emphasising of censorship ties into looser moderation, leading to more toxic and hateful posts and comments being allowed on to the subreddit. This then leads to more users being encouraged to join in and post increasingly toxic and hateful posts and comments, which in turn do not get moderated. Hence, this cycle perpetuates and amplifies toxicity and hatefulness. 
+![Fig. 18](https://github.com/rhyden-kx/DSA4264/blob/main/images/ToxicCycle.png)
 <p align="center"> Fig. 18 </p>
 
 
