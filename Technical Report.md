@@ -1,6 +1,6 @@
 # DSA4264 Technical Report:   
 Project: Reddit Analysis  
-Members: Neleh Tok Ying Yun, Denise Teh Kai Xin, Lin Zhengjue Elisa, Sarah Goh Yue En, Caleb Lee Heng Yi  
+Members: Caleb Lee Heng Yi, Denise Teh Kai Xin, Lin Zhengjue Elisa, Neleh Tok Ying Yun, Sarah Goh Yue En     
 Last updated on 13/11/2024
 
 ---
@@ -61,9 +61,9 @@ We seeded the model across 9 distinct topics: Political, Covid-19, Race and Reli
 We assessed the seeded model using the [Gensim CoherenceModel](https://palmetto.demos.dice-research.org/), since LDAMallet is under the Gensim library. We tested it across 3 coherence scoring models: c_v, and c_uci u_mass, yielding scores: 0.7213, -0.172, -5.589 respectively. The c_v score indicates a relatively acceptable level, but the c_uci and u_mass score indicates slightly weaker coherence.
 
 
-3.2 Limitations
-Model Limitations in Toxicity and Hatefulness Differentiation: LionGuard’s toxicity and hatefulness scores are limited by a lack of category-specific insights, especially in detecting less explicit, context-dependent hatefulness markers. The model’s bias toward explicitly harmful language may mean it under-reports subtle, situational hatefulness often present in complex discussions around race or religion.
-Limitations in Topic Modelling accuracy due to lack of meaningful corpus: We acknowledge that the topic modelling coherence scores in this analysis is weak, this is due to the method of Coherence Scorings which take into account term frequency and n-grams probability. Due to the short nature of comments, as well as unconventional sentence structures of Singlish, it would affect the effectiveness of coherence scoring systems.
+## 3.2 Limitations
+- 1. *Model Limitations in Toxicity and Hatefulness Differentiation:* LionGuard’s toxicity and hatefulness scores are limited by a lack of category-specific insights, especially in detecting less explicit, context-dependent hatefulness markers. The model’s bias toward explicitly harmful language may mean it under-reports subtle, situational hatefulness often present in complex discussions around race or religion.  
+- 2. *Limitations in Topic Modelling accuracy due to lack of meaningful corpus:* We acknowledge that the topic modelling coherence scores in this analysis is weak, this is due to the method of Coherence Scorings which take into account term frequency and n-grams probability. Due to the short nature of comments, as well as unconventional sentence structures of Singlish, it would affect the effectiveness of coherence scoring systems.
 Limitations in Topic Model Precision Due to Resource Constraints: The project employed LDA-based topic modelling constrained by limited computational resources. Consequently, we focused on broad themes without exploring more granular subtopics, which may restrict the specificity of our conclusions, especially for nuanced or high-volume discussions. This constraint limits the granularity achievable in our findings, which could impact the depth of subtopic insights for large-scale discussions.
 3.3 Technical Assumptions
 Model Suitability for Localized Content: We assume that the LionGuard model, designed specifically for Singaporean discourse, is suitable for detecting the nuanced toxicity and hatefulness in local contexts, especially compared to global models like HateBERT. This is based on LionGuard’s localized training data, which captures both English and Singlish language patterns, making it more attuned to local language subtleties.
