@@ -49,3 +49,5 @@ We hope to improve this pipeline to be generalized across all text data, simplif
     ```
 6. Install GENSIM LDAMallet Package into DSA4264 directory:
     [ldaMallet.py link](https://github.com/piskvorky/gensim/blob/release-3.8.3/gensim/models/wrappers/ldamallet.py)
+
+7. Run on your chosen Jupyter editor & select the [env] created as the kernel.
