@@ -41,10 +41,7 @@ The current state of Reddit stays the same, i.e. no addition of new features to 
 
 # 3. Methodology
 ## 3.1 Experimental Design
-Our project hinges on 2 main algorithms, LionGuard for sentiment analysis scoring, and LDAMallet for topic modelling. We also utilised other tools such as Word Clouds, matplotlib graphs to visualise our processes and results ([Fig 1.](https://github.com/rhyden-kx/DSA4264/blob/main/images/Methogology%20fllowchart.png)).
-
-
-Fig 1.
+Our project hinges on 2 main algorithms, LionGuard for sentiment analysis scoring, and LDAMallet for topic modelling. We also utilised other tools such as Word Clouds, matplotlib graphs to visualise our processes and results ([Fig. 1](https://github.com/rhyden-kx/DSA4264/blob/main/images/Methogology%20fllowchart.png)).
 
 ### 3.1.1 LionGuard:
 [LionGuard](https://arxiv.org/html/2407.10995v1) is a pretrained sentiment scoring model developed by Govtech for Singaporean contexts, which does both embedding as well as classification. It combines the Beijing Academy of AI (BAAI) General Embedding (BGE) with a Ridge Classifier to produce its Binary Classifier and Multi Label classifier. The Binary Classifier detects if a document is Safe or Unsafe (0 or 1), while the Multi Label scores each document across 7 categories: hateful, harassment, public harm, self-harm, sexual, toxic, violent; ranging (-∞, +∞), where higher scores indicate more positive class prediction. Each model for the Multi-Label was fine tuned to suit that context. 
@@ -84,81 +81,53 @@ Unaddressed Singaporean Linguistic Features: We removed stopwords using the NLTK
 ## 4.1 Trend over time
 ### Hypothesis 1: Toxicity & hatefulness has been increasing overtime. ✅*True*
 
-Fig 2.
-By plotting the daily average hateful and toxic scores (Fig 2.), we can see that toxicity and hatefulness has increased over time. Both of which saw a sharp increase since March 2023, but especially the months of September and October that year.
+By plotting the daily average hateful and toxic scores ([Fig. 2](https://github.com/rhyden-kx/DSA4264/blob/main/images/daily_average_hatefulness_and_toxic_scores.png)), we can see that toxicity and hatefulness has increased over time. Both of which saw a sharp increase since March 2023, but especially the months of September and October that year.
 
 It can also be observed that there is more variation in the toxic scores than in the hateful scores.
 
 By averaging by month, we calculate that hatefulness and toxicity have seen an 8% and 58% increase over time respectively.
 
-
-Fig 3.
-This plot shows that the number of comments has largely hovered at 200 to 500 per day (Fig 3.), with exception of a few spikes. Thus, comments are generally getting more toxic in their content.
+This plot shows that the number of comments has largely hovered at 200 to 500 per day ([Fig. 3](https://github.com/rhyden-kx/DSA4264/blob/main/images/number_of_comments_across_time.png)), with exception of a few spikes. Thus, comments are generally getting more toxic in their content.
 
 We proceeded to investigate what factors were contributing to the sharp increase in hateful and toxic scores since March 2023.
 
 ## 4.2 Trend Across Subreddits
 ### Hypothesis 2: Toxicity and hatefulness varies across subreddits. ✅ *True*
 
-Fig 4.
-We plotted the toxicity scores across subreddits (Fig 4.), and saw that most of the comments in r/singaporeraw and r/singaporehappenings are more toxic than in r/singapore.
+We plotted the toxicity scores across subreddits ([Fig. 4](https://github.com/rhyden-kx/DSA4264/blob/main/images/subreddit%20toxicity.png)), and saw that most of the comments in r/singaporeraw and r/singaporehappenings are more toxic than in r/singapore.
 
+We plot the average toxic scores per month ([Fig. 5](https://github.com/rhyden-kx/DSA4264/blob/main/images/monthly_ave_toxic_score_by_subreddit.png)), and saw all 3 subreddits increase in average toxicity. However, we noticed that r/singaporehappenings only started to have average toxic scores since September 2022.
 
-Fig 5.
-We plot the average toxic scores per month (Fig 5.), and saw all 3 subreddits increase in average toxicity. However, we noticed that r/singaporehappenings only started to have average toxic scores since September 2022.
-
-
-
-Fig 6.
-We investigate why this was the case and discovered it was because comments in r/singaporehappenings only existed since September 2022 (Fig 2.). Thus, we concluded that it was because of the subreddits that resulted in the large increase in toxicity around May 2023.
+We investigate why this was the case and discovered it was because comments in r/singaporehappenings only existed since September 2022 ([Fig. 6](https://github.com/rhyden-kx/DSA4264/blob/main/images/monthly_comment_count_by_subreddit.png)). Thus, we concluded that it was because of the subreddits that resulted in the large increase in toxicity around May 2023.
 
 We sought to explain the overall increase in toxicity and hatefulness across the entire timespan.
 
 ## 4.3 Trend Across Topics
 ### Hypothesis 3: Major One-off Events (eg. GE, affair, iswaran, israel-hamas; COVID: Lockdown) are more toxic and hateful than median every day comments correspond to higher toxicity & hatefulness. ❌ *False*
-Fig 7 & 8.
+
 Next, we want to investigate whether major one-off events correlated with more toxic scores. 
 
-First, we went to find days that recorded the most number of comments. We found 3 days. From the 1st plot, we found 2 days (Fig 7): 2020-07-10, which was polling day, and 2021-12-07, which was the day news broke out that COVID restrictions were extended. From the 2nd plot (Fig 8), we found 2023-07-17, which coincided with the day news broke out that MP Tan Chuan Jin and Cheng Li Hui had an affair.
+First, we went to find days that recorded the most number of comments. We found 3 days. From the 1st plot, we found 2 days ([Fig. 3](https://github.com/rhyden-kx/DSA4264/blob/main/images/number_of_comments_across_time.png)): 2020-07-10, which was polling day, and 2021-12-07, which was the day news broke out that COVID restrictions were extended. From the 2nd plot ([Fig. 7](https://github.com/rhyden-kx/DSA4264/blob/main/images/monthly_comments_by_year.png)), we found 2023-07-17, which coincided with the day news broke out that MP Tan Chuan Jin and Cheng Li Hui had an affair.
 
 Next, we searched for the day with the median average toxicity score and compared it with the previous 3 days we found earlier.
-
-Fig 9. 
-All days recorded similar toxicity and hatefulness scores (Fig 9). Thus, we conclude that major one-off events do not influence toxicity and hatefulness scores.
+ 
+All days recorded similar toxicity and hatefulness scores ([Fig. 8](https://github.com/rhyden-kx/DSA4264/blob/main/images/hateful_and_toxic_one_off_events.png)). Thus, we conclude that major one-off events do not influence toxicity and hatefulness scores.
 
 ### Hypothesis 4: Certain topics would be more toxic/hateful. ❌*False*
 
-For this hypothesis we investigated the toxic and hateful scores for the 10 topics we got from our topic modelling. However, we found that there were similar toxicity and hatefulness scores across all topics. 
+For this hypothesis we investigated the toxic and hateful scores for the 10 topics we got from our topic modelling. However, we found that there were similar toxicity and hatefulness scores across all topics.
 
- 
-Fig 10
-
-We also decided to investigate the distribution for the common content categories of the top 20 (excluding daily discussion posts) most active posts based on the number of comments. We grouped the top 20 post titles into 6 content categories based on title name, not to be confused with topics. Comparing the distributions of toxicity scores of each content category, we yielded results that align with (Fig. 10), reinforcing that the accuracy of our topic modelling was not the cause behind the lack of trend.
-
-
-Fig 11
-
+We also decided to investigate the distribution for the common content categories of the top 20 (excluding daily discussion posts) most active posts based on the number of comments. We grouped the top 20 post titles into 6 content categories based on title name, not to be confused with topics. Comparing the distributions of toxicity scores of each content category, we yielded results that align with ([Fig. 9](https://github.com/rhyden-kx/DSA4264/blob/main/images/toxic_and_hatefulness_by_topic.png)), reinforcing that the accuracy of our topic modelling was not the cause behind the lack of trend.
 
 Thus we concluded that toxicity and hatefulness do not vary significantly for particular topics. 
 
-However, we noticed that generally toxicity scores are higher than hatefulness scores for (Fig 11.). For instance, in both figures all of the 10 topics and 6 content categories had 75th percentiles that were not considered hateful (score < 0) but were considered toxic (score > 0) respectively. 
+However, we noticed that generally toxicity scores ([Fig. 10](https://github.com/rhyden-kx/DSA4264/blob/main/images/toxic_by_post_content_category.png)), are higher than hatefulness scores ([Fig. 11](https://github.com/rhyden-kx/DSA4264/blob/main/images/hateful_by_post_content_category.png)). For instance, in both figures all of the 10 topics and 6 content categories had 75th percentiles that were not considered hateful (score < 0) but were considered toxic (score > 0) respectively. 
 
+[Fig. 12a](https://github.com/rhyden-kx/DSA4264/blob/main/images/toxic_content_category_wordcloud.png) and [Fig. 12b](https://github.com/rhyden-kx/DSA4264/blob/main/images/hateful_content_category_wordcloud.png) shows the wordclouds of most frequent words for comments that were determined to be toxic (score > 0) and hateful (score > 0) respectively. We observe that all 6 content categories had toxic comments but only GE2020 had hateful content. 
 
-Fig 12a
+[Fig. 13a](https://github.com/rhyden-kx/DSA4264/blob/main/images/overall_toxic_content_category_wordcloud.png) The frequent words from the overall toxic comments of the top 20 posts align with Lionguard’s definition of toxic. The model detected rude, disrespectful, or profane comments. 
 
-Fig 12b
-
-Fig 12a and Fig 12b shows the wordclouds of most frequent words for comments that were determined to be toxic (score > 0) and hateful (score > 0) respectively. We observe that all 6 content categories had toxic comments but only GE2020 had hateful content. 
-
-
-Fig 13a
-
-Fig 13b
-
-
-Fig 4a The frequent words from the overall toxic comments of the top 20 posts align with Lionguard’s definition of toxic. The model detected rude, disrespectful, or profane comments. 
-
-Fig 4b While Lionguard is meant to detect hatefulness in terms of race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. The hateful comments were mainly related to race and gender, showing that these areas contributed most to the hatefulness. 
+[Fig. 13b](https://github.com/rhyden-kx/DSA4264/blob/main/images/overall_hateful_content_category_wordcloud.png) While Lionguard is meant to detect hatefulness in terms of race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. The hateful comments were mainly related to race and gender, showing that these areas contributed most to the hatefulness. 
 
 ## 4.4 Trend of Moderation
 We decided to use whether the text column in our dataset contained the string ‘[removed]’ or not as a gauge for measuring the moderation of comments by moderators. This is different from the moderation column in the original dataset given to us.
@@ -173,9 +142,7 @@ Third, the variables in the moderation list are not consistent throughout our da
 Lastly, [research](https://www.reddit.com/r/help/comments/91ni5k/comment/e2zdg08/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) has shown that [removed] was due to moderator activity either by the mods or the auto-moderation rules of the subreddit.
 Hypothesis 5: There is not enough moderation on days with higher toxicity. ✅True
 
-
-Fig 14.
-In general, toxicity has increased, while moderation activity has varied, but has largely remained the same over time (Fig 14.). There are 3 peaks in average toxic score: one in July 2020, May 2022, and May 2023 onwards, especially after August 2023. All 3 periods show an increase in toxicity in comments, but a dip or constant number of removed comments, during those periods.
+In general, toxicity has increased, while moderation activity has varied, but has largely remained the same over time ([Fig. 14](https://github.com/rhyden-kx/DSA4264/blob/main/images/ave_toxic_and_manual_removed_across_time.png)). There are 3 peaks in average toxic score: one in July 2020, May 2022, and May 2023 onwards, especially after August 2023. All 3 periods show an increase in toxicity in comments, but a dip or constant number of removed comments, during those periods.
 
 Thus, we conclude that an increase in toxicity in general has not been met with an increase in moderation.
 
@@ -183,13 +150,11 @@ We pick moderation in months rather than days here, to get a bigger picture of m
 
 ## Hypothesis 6: Toxic/hateful users and subreddits are not moderated enough. ✅ True
 
-Fig 15.
-Moderation between the 3 subreddits differ (Fig 15.). This shows that moderation is correlated with toxicity of the subreddits, seen earlier in Fig 5.
+Moderation between the 3 subreddits differ ([Fig. 15](https://github.com/rhyden-kx/DSA4264/blob/main/images/monthly_count_removed_comments_by_subreddit.png)). This shows that moderation is correlated with toxicity of the subreddits, seen earlier in [Fig. 5](https://github.com/rhyden-kx/DSA4264/blob/main/images/monthly_ave_toxic_score_by_subreddit.png).
 
-Fig 16.
 We expect the plot to look more like a straight line passing through the origin, because more toxic users should receive more moderation.
 
-But we get a scatterplot that is quite flat (Fig 16.). We observe that there is a good number of users who have high average toxicity scores, but have no comments being removed. This means that toxic users are not sufficiently moderated.
+But we get a scatterplot that is quite flat ([Fig. 16](https://github.com/rhyden-kx/DSA4264/blob/main/images/ave_toxic_removed_comments_by_user.png)). We observe that there is a good number of users who have high average toxicity scores, but have no comments being removed. This means that toxic users are not sufficiently moderated.
 
 From the plot, we also see that users posting comments in r/singaporeraw and r/singaporehappenings tend to be on the right side of the plot, meaning that users found in these 2 subreddits are more toxic than users found in r/singapore.
 
@@ -213,20 +178,12 @@ Thus, we theorise that due to Reddit’s API pricing changes the moderation capa
 ### 5.1.2 Theory 2: Rising popularity of inherently toxic subreddits
 We found from the subsection “Trend Across Subreddits” that *r/SingaporeRaw* and *r/SingaporeHappenings* have a higher average toxic score compared to *r/Singapore*. Additionally, these 2 subreddits are growing in popularity in recent years, based on their increasing number of comments. 
 
-Upon further investigation we found that these 2 subreddits have either no community rules or significantly fewer rules compared to *r/Singapore* (Fig 17.). In fact the subreddit description of *r/SingaporeRaw* seems to be promoting itself as an uncensored subreddit where “Redditporeans” can feel safe to post freely without being silenced. Thus, these 2 subreddits are by their nature meant to provide an alternative space to the more restrictive *r/Singapore* for redditors who want a less moderated experience.
+Upon further investigation we found that these 2 subreddits have either no community rules or significantly fewer rules compared to *r/Singapore* ([Fig. 17](https://github.com/rhyden-kx/DSA4264/blob/main/images/subreddit_rules.png)). In fact the subreddit description of *r/SingaporeRaw* seems to be promoting itself as an uncensored subreddit where “Redditporeans” can feel safe to post freely without being silenced. Thus, these 2 subreddits are by their nature meant to provide an alternative space to the more restrictive *r/Singapore* for redditors who want a less moderated experience.
  
-
-Fig 17.
-This de-emphasising of censorship ties into looser moderation, leading to more toxic and hateful posts and comments being allowed on to the subreddit. This then leads to more users being encouraged to join in and post increasingly toxic and hateful posts and comments, which in turn do not get moderated. Hence, this cycle perpetuates and amplifies toxicity and hatefulness (Fig 18.).
-
-
-Fig 18.
+This de-emphasising of censorship ties into looser moderation, leading to more toxic and hateful posts and comments being allowed on to the subreddit. This then leads to more users being encouraged to join in and post increasingly toxic and hateful posts and comments, which in turn do not get moderated. Hence, this cycle perpetuates and amplifies toxicity and hatefulness ([Fig. 18](https://github.com/rhyden-kx/DSA4264/blob/main/images/toxic_cycle.png)).
 
 ## 5.2 Fairness:
-Analysing Reddit data for Singapore subreddits presents a challenge in ensuring fair representation due to the uneven user base sizes, which affects the distribution of comments in our sampled dataset. With *r/Singapore*'s 1.5 million users vastly outnumbering the 78k users in *r/SingaporeRaw* and 43k in *r/SingaporeHappenings*, our findings and topic modelling are naturally more influenced by *r/Singapore*'s discussions. This imbalance means that prominent trends in *r/Singapore* may overshadow unique or less common themes from the smaller subreddits. While *r/Singapore*'s larger dataset offers broad insights, it limits our ability to fully capture a balanced view of discourse across all three communities. Given our time constraints, we had to work within this limitation.
-
-
-Fig 19.
+Analysing Reddit data for Singapore subreddits presents a challenge in ensuring fair representation due to the uneven user base sizes, which affects the distribution of comments in our sampled dataset. With *r/Singapore*'s 1.5 million users vastly outnumbering the 78k users in *r/SingaporeRaw* and 43k in *r/SingaporeHappenings*, our findings and topic modelling are naturally more influenced by *r/Singapore*'s discussions([Fig. 19](https://github.com/rhyden-kx/DSA4264/blob/main/images/subreddit_comment_count.png). This imbalance means that prominent trends in *r/Singapore* may overshadow unique or less common themes from the smaller subreddits. While *r/Singapore*'s larger dataset offers broad insights, it limits our ability to fully capture a balanced view of discourse across all three communities. Given our time constraints, we had to work within this limitation.
 
 ## 5.3 Deployability:
 We have developed a jupyter notebook which allows users to run our workflow and analysis methods to generate results for larger scales of data. We have chosen a range of methods and visualisations which are most relevant for trend analysis, and yet simple for non-technical users to understand. There are also dynamic visualisations, which allow the user to select date ranges for more intricate analyses.
@@ -240,10 +197,7 @@ Currently, students in Singapore have their own Personal Learning Devices (PLDs)
 We would aim to tackle the root problem, which is to curb the creation of spaces for toxic content. However, as [Article 14(1)](https://sso.agc.gov.sg/Act/CONS1963?ProvIds=pr14-) of the Constitution of the Republic of Singapore guarantees to Singapore citizens the rights to freedom of speech and expression, peaceful assembly without arms, and association, it would not be legal, nor ethical to just remove these spaces entirely. Furthermore, direct interference would be highly unpopular amongst the public, especially in subreddits such as *r/Singaporeraw* where the aim is for unfiltered speech. 
 
 ### 5.4.2 Current Situation - Reddit:
-Reddit’s current automatic moderation filters are not reliable and inadequate. The filter does not take into consideration the semantic meaning of the full sentence, but bases it off individual words.As seen below, derogatory terms such as “CECA” (a term typically used derogatorily to describe migrant workers from India under a specific work scheme), were not flagged as hateful. 
-
-						
-Fig. X: Testing Reddit filters on our most hateful comments
+Reddit’s current automatic moderation filters are not reliable and inadequate. The filter does not take into consideration the semantic meaning of the full sentence, but bases it off individual words. As seen below, derogatory terms such as “CECA” (a term typically used derogatorily to describe migrant workers from India under a specific work scheme), were not flagged as hateful ([Fig. 20](https://github.com/rhyden-kx/DSA4264/blob/main/images/Reddit%20filter.png)).
 
 This leads to an issue of moderators needing to create their own rules and processes to flag out negative content, which relies on manpower and is highly subjective to the individual moderator. As mentioned by moderators in r/Singapore, they are [unable to develop better moderation tools](https://www.reddit.com/r/singapore/comments/148iou9/blackout_reflection_how_has_rsingapore_going_dark/) to aid in their work due to the new API call changes. Thus our solution would aim to reduce the proportion of toxic content, and also help improve current Reddit moderation capabilities.
 
