@@ -33,9 +33,9 @@ Ultimately, our success will be measured not only by the reduction in toxic and 
 ## 2.3 Assumptions
 The following are the assumptions for our project:
 
-Sufficient manpower to review toxic/hateful comments that are flagged out by moderation bot.
-Toxicity and hatefulness within subreddits do not spread outside itself. This allows us to take the difference of the 2 percentage changes to give us our success metric numbers.
-The current state of Reddit stays the same, i.e. no addition of new features to Reddit. Addition of new features will require us to re-analyse how the addition of the new feature affects the problem.
+1. Sufficient manpower to review toxic/hateful comments that are flagged out by moderation bot.
+2. Toxicity and hatefulness within subreddits do not spread outside itself. This allows us to take the difference of the 2 percentage changes to give us our success metric numbers.
+3. The current state of Reddit stays the same, i.e. no addition of new features to Reddit. Addition of new features will require us to re-analyse how the addition of the new feature affects the problem.
 
 ---
 
@@ -51,7 +51,7 @@ As the data we are exploring comes from Singaporean subreddits, it tends to skew
 Evaluation of Lionguard by its developers showed a better PR-AUC score compared to other general LLMs, such as HateBERT and SingBERT, as well as XGboost and Neural Network classifiers. Considering our end goal is to establish safe online consumerism, using the PR-AUC score is a good combination of Precision and Recall, especially for imbalanced classes where positive classes are rare. 
 
 ### 3.1.2 LDAMallet:
-LDAMallet comes from the [MALLET](https://mimno.github.io/Mallet/topics Java-based package, and uses MALLET’s sampling-based implementation of Latent Dirichlet Allocation (LDA). We used this model over others due to its ability to seed topics, which we required due to the nature of our analysis and hypotheses. We also felt that Latent Semantic Analysis would be less useful considering the short and efficient communication style of Singaporeans and lack of contextual vocabulary within comments (compared to original posts).
+LDAMallet comes from the [MALLET](https://mimno.github.io/Mallet/topics) Java-based package, and uses MALLET’s sampling-based implementation of Latent Dirichlet Allocation (LDA). We used this model over others due to its ability to seed topics, which we required due to the nature of our analysis and hypotheses. We also felt that Latent Semantic Analysis would be less useful considering the short and efficient communication style of Singaporeans and lack of contextual vocabulary within comments (compared to original posts).
 
 We seeded the model across 9 distinct topics: Political, Covid-19, Race and Religion, Transport, Relationships, Crims, Housing, Education and Work. If the model failed to classify a document, it was marked as Unknown. These topics came from our initial exploratory topic modelling, which used LDA as well.
 
@@ -71,10 +71,10 @@ We assessed the seeded model using the [Gensim CoherenceModel](https://palmetto.
 
 ## 3.4 Data
 1. The Data used for this project was provided in class by Professor Khoo. It is a collection of 4932728 rows of reddit comments from 2020 to 2023, with additional data such as timestamp, moderation information and subreddit IDs. 
-Data Filtering and Pre-Processing Constraints: We removed any non-english characters, punctuation and emojis from the text comments to aid in language processing for our sentiment analysis. We note that Singaporean English relies heavily on expressive language markers, including emoji use and non-standard terms. Consequently, certain comment tones or intents may have been diluted or misinterpreted due to these preprocessing decisions, potentially skewing our analysis.
-2. In our initial preprocessing we also removed any empty comments, as well as comments marked as [deleted] or [removed] since they would not be useful for sentiment analysis. However, we later found out that some of these removals were due to moderation, and reprocessed the data to analyse these moderated comments.
-Unaddressed Singaporean Linguistic Features: We removed stopwords using the NLTK English stopword list. However, Singaporean stopwords (e.g., "lah," "lor," "ah") were not included, which could introduce noise in our topic models and word frequency analyses. The absence of these localized stopwords may have skewed outputs, possibly leading to noise in our topic model outputs and misrepresentations in frequency-based visualizations like word clouds, subsequently affecting the clarity of our insights.
-3. Data Representation of Subreddit-Specific Dynamics: Each subreddit analyzed in this study—r/singapore, r/singaporeraw, and r/singaporehappenings—caters to distinct user groups and content moderation philosophies. This diversity provides valuable insights into various community dynamics but also complicates the generalization of findings. For instance, while r/singaporeraw allows for more unrestricted speech, r/singapore may adopt a stricter approach to content moderation. These variances impact the scalability and applicability of our recommendations across communities, given the different operational cultures.
+2. Data Filtering and Pre-Processing Constraints: We removed any non-english characters, punctuation and emojis from the text comments to aid in language processing for our sentiment analysis. We note that Singaporean English relies heavily on expressive language markers, including emoji use and non-standard terms. Consequently, certain comment tones or intents may have been diluted or misinterpreted due to these preprocessing decisions, potentially skewing our analysis.
+3. In our initial preprocessing we also removed any empty comments, as well as comments marked as [deleted] or [removed] since they would not be useful for sentiment analysis. However, we later found out that some of these removals were due to moderation, and reprocessed the data to analyse these moderated comments.
+4. Unaddressed Singaporean Linguistic Features: We removed stopwords using the NLTK English stopword list. However, Singaporean stopwords (e.g., "lah," "lor," "ah") were not included, which could introduce noise in our topic models and word frequency analyses. The absence of these localized stopwords may have skewed outputs, possibly leading to noise in our topic model outputs and misrepresentations in frequency-based visualizations like word clouds, subsequently affecting the clarity of our insights.
+5. Data Representation of Subreddit-Specific Dynamics: Each subreddit analyzed in this study—r/singapore, r/singaporeraw, and r/singaporehappenings—caters to distinct user groups and content moderation philosophies. This diversity provides valuable insights into various community dynamics but also complicates the generalization of findings. For instance, while r/singaporeraw allows for more unrestricted speech, r/singapore may adopt a stricter approach to content moderation. These variances impact the scalability and applicability of our recommendations across communities, given the different operational cultures.
 
 --- 
 # 4. Findings:
