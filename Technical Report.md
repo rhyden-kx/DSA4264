@@ -41,7 +41,7 @@ The following are the assumptions for our project:
 
 # 3. Methodology
 ## 3.1 Experimental Design
-Our project hinges on 2 main algorithms, LionGuard for sentiment analysis scoring, and LDAMallet for topic modelling. We also utilised other tools such as Word Clouds, matplotlib graphs to visualise our processes and results ([Fig. 1](https://github.com/rhyden-kx/DSA4264/blob/main/images/Methogology%20fllowchart.png)).
+Our project hinges on 2 main algorithms, LionGuard for sentiment analysis scoring, and LDAMallet for topic modelling. We also utilised other tools such as Word Clouds, matplotlib graphs to visualise our processes and results (![Fig. 1](https://github.com/rhyden-kx/DSA4264/blob/main/images/Methogology%20fllowchart.png?raw=true)).
 
 ### 3.1.1 LionGuard:
 [LionGuard](https://arxiv.org/html/2407.10995v1) is a pretrained sentiment scoring model developed by Govtech for Singaporean contexts, which does both embedding as well as classification. It combines the Beijing Academy of AI (BAAI) General Embedding (BGE) with a Ridge Classifier to produce its Binary Classifier and Multi Label classifier. The Binary Classifier detects if a document is Safe or Unsafe (0 or 1), while the Multi Label scores each document across 7 categories: hateful, harassment, public harm, self-harm, sexual, toxic, violent; ranging (-∞, +∞), where higher scores indicate more positive class prediction. Each model for the Multi-Label was fine tuned to suit that context. 
