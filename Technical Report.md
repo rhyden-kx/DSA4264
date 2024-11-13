@@ -1,6 +1,6 @@
-# DSA4264 Technical Report: 
-Project: Reddit Analysis
-Members: Neleh Tok Ying Yun, Denise Teh Kai Xin, Lin Zhengjue Elisa, Sarah Goh Yue En, Caleb Lee Heng Yi
+# DSA4264 Technical Report:   
+Project: Reddit Analysis  
+Members: Neleh Tok Ying Yun, Denise Teh Kai Xin, Lin Zhengjue Elisa, Sarah Goh Yue En, Caleb Lee Heng Yi  
 Last updated on 13/11/2024
 
 ---
