@@ -174,6 +174,8 @@ This announcement was met with [intense backlash](https://www.theguardian.com/te
 
 However, [CNBC](https://www.cnbc.com/2023/06/16/reddit-in-crisis-as-prominent-moderators-protest-api-price-increase.html#:~:text=Although%20Reddit%20has,as%20outside%20services) found that though Reddit claims that selected moderation tools will remain unaffected, moderators were sceptical. Moderators claimed that historically Reddit has made promises to introduce high quality internal moderation tools that ended up falling below expectations.
 
+Additionally, *r/Singapore* moderators have mentioned that production of their own moderation tool bot has been affected due to this new policy. This new tool would supposedly result in quicker and more effective moderation. However, since plans were disrupted, their moderation processes would have been largely affected. We can see this effect in how moderation dips in Quarter 3 of 2023 ([Fig. 14](https://github.com/rhyden-kx/DSA4264/blob/main/images/ave_toxic_and_manual_removed_across_time.png)), which coincides with the implementation of the new API prices on July 1st.
+
 Thus, we theorise that due to Reddit’s API pricing changes the moderation capacity on subreddits such as *r/Singapore* has dropped due to the now limited access to moderation tools. 
 
 ### 5.1.2 Theory 2: Rising popularity of inherently toxic subreddits
