@@ -103,7 +103,7 @@ We investigate why this was the case and discovered it was because comments in *
 We sought to explain the overall increase in toxicity and hatefulness across the entire timespan.
 
 ## 4.3 Trend Across Topics
-### Hypothesis 3: Major One-off Events (eg. GE, affair, iswaran, israel-hamas; COVID: Lockdown) are more toxic and hateful than median every day comments correspond to higher toxicity & hatefulness. ❌ *False*
+### Hypothesis 3: Major One-off Events (eg. GE, affair, iswaran, israel-hamas; COVID: Lockdown) are more toxic and hateful than median every day comments. ❌ *False*
 
 Next, we want to investigate whether major one-off events correlated with more toxic scores. 
 
@@ -137,9 +137,9 @@ First, there are more entries with ‘[removed]’ as its text than in the moder
 
 Second, the variables in the moderation list represent more automatic moderation actions, e.g. collapsed comments which are collapsed based on the number of upvotes and downvotes it receives.
 
-Third, the variables in the moderation list are not consistent throughout our data, both between different subreddits and within subreddits. This is because different subreddits have different moderation actions.Therefore, using the text column is more consistent to compare moderation activity across different subreddits.
+Third, the variables in the moderation list are not consistent throughout our data, both between different subreddits and within subreddits. This is because different subreddits have different moderation actions. Therefore, using the text column is more consistent to compare moderation activity across different subreddits.
 
-Lastly, [research](https://www.reddit.com/r/help/comments/91ni5k/comment/e2zdg08/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) has shown that [removed] was due to moderator activity either by the mods or the auto-moderation rules of the subreddit.
+Lastly, [research](https://www.reddit.com/r/help/comments/91ni5k/comment/e2zdg08/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) has shown that '[removed]' was due to moderator activity either by the mods or the auto-moderation rules of the subreddit.
 
 ### Hypothesis 5: There is not enough moderation on days with higher toxicity. ✅*True*
 
@@ -198,9 +198,9 @@ Currently, students in Singapore have their own Personal Learning Devices (PLDs)
 We would aim to tackle the root problem, which is to curb the creation of spaces for toxic content. However, as [Article 14(1)](https://sso.agc.gov.sg/Act/CONS1963?ProvIds=pr14-) of the Constitution of the Republic of Singapore guarantees to Singapore citizens the rights to freedom of speech and expression, peaceful assembly without arms, and association, it would not be legal, nor ethical to just remove these spaces entirely. Furthermore, direct interference would be highly unpopular amongst the public, especially in subreddits such as *r/Singaporeraw* where the aim is for unfiltered speech. 
 
 ### 5.4.2 Current Situation - Reddit:
-Reddit’s current automatic moderation filters are not reliable and inadequate. The filter does not take into consideration the semantic meaning of the full sentence, but bases it off individual words. As seen below, derogatory terms such as “CECA” (a term typically used derogatorily to describe migrant workers from India under a specific work scheme), were not flagged as hateful ([Fig. 20](https://github.com/rhyden-kx/DSA4264/blob/main/images/Reddit%20filter.png)).
+Reddit’s current automatic moderation filters are not reliable and are inadequate. The filter does not take into consideration the semantic meaning of the full sentence, but bases it off individual words. As seen below, derogatory terms such as “CECA” (a term typically used derogatorily to describe migrant workers from India under a specific work scheme), were not flagged as hateful ([Fig. 20](https://github.com/rhyden-kx/DSA4264/blob/main/images/Reddit%20filter.png)).
 
-This leads to an issue of moderators needing to create their own rules and processes to flag out negative content, which relies on manpower and is highly subjective to the individual moderator. As mentioned by moderators in r/Singapore, they are [unable to develop better moderation tools](https://www.reddit.com/r/singapore/comments/148iou9/blackout_reflection_how_has_rsingapore_going_dark/) to aid in their work due to the new API call changes. Thus our solution would aim to reduce the proportion of toxic content, and also help improve current Reddit moderation capabilities.
+This leads to an issue of moderators needing to create their own rules and processes to flag out negative content, which relies on manpower and is highly subjective to the individual moderator. As mentioned by moderators in *r/Singapore*, they are [unable to develop better moderation tools](https://www.reddit.com/r/singapore/comments/148iou9/blackout_reflection_how_has_rsingapore_going_dark/) to aid in their work due to the new API call changes. Thus our solution would aim to reduce the proportion of toxic content, and also help improve current Reddit moderation capabilities.
 
 ### 5.4.3 Recommendation 1: Moderation Guard
 For spaces such as *r/Singapore*, which are generally not toxic or hateful, we could develop a moderation bot powered by Lionguard (or a similar LLM) calibrated for Singaporean vocabulary. It would feature a flagging system to vet every post and comment in that subreddit for toxic and hateful comments, and mark them accordingly. Moderators can adjust the threshold for an acceptable level of hatefulness and toxicity, and those which are above that threshold will be flagged for moderators to check. Additionally, it would also flag out to moderators users with a high toxic or hateful activity score who join the subreddit.
