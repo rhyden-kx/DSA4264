@@ -48,6 +48,9 @@ We hope to improve this pipeline to be generalized across all text data, simplif
     pip install -r requirements.txt
     ```
 6. Install GENSIM LDAMallet Package into DSA4264 directory:
-    [ldaMallet.py link](https://github.com/piskvorky/gensim/blob/release-3.8.3/gensim/models/wrappers/ldamallet.py)
+    [ldaMallet.py link](https://github.com/piskvorky/gensim/blob/release-3.8.3/gensim/models/wrappers/ldamallet.py)   
 
-7. Run [Analysis Pipeline.ipynb] on your chosen Jupyter editor & select the [env] created as the kernel.
+7. Install MALLET file and note down directory:
+    [MALLET file download](https://mallet.cs.umass.edu/download.php)
+
+9. Run [Analysis Pipeline.ipynb](https://github.com/rhyden-kx/DSA4264/blob/main/Analysis%20Pipeline.ipynb) on your chosen Jupyter editor & select the [env] created as the kernel.
