@@ -41,7 +41,7 @@ The current state of Reddit stays the same, i.e. no addition of new features to 
 
 # 3. Methodology
 ## 3.1 Experimental Design
-Our project hinges on 2 main algorithms, LionGuard for sentiment analysis scoring, and LDAMallet for topic modelling. We also utilised other tools such as Word Clouds, matplotlib graphs to visualise our processes and results (Fig 1.).
+Our project hinges on 2 main algorithms, LionGuard for sentiment analysis scoring, and LDAMallet for topic modelling. We also utilised other tools such as Word Clouds, matplotlib graphs to visualise our processes and results ([Fig 1.](https://github.com/rhyden-kx/DSA4264/blob/main/images/Methogology%20fllowchart.png)).
 
 
 Fig 1.
