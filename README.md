@@ -10,6 +10,10 @@
 ## Project Aim:
 Create a pipeline for streamlined trend analysis for text-based data. Currently it is only reflected for Reddit comments-based data.
 
+## Project Slides:
+Presentation Slides for this project can be found here:
+     [presentation_slides.pdf link](https://github.com/rhyden-kx/DSA4264/blob/main/presentation_slides.pdf) 
+
 ## Future Developments:
 We hope to improve this pipeline to be generalized across all text data, simplifyiing the data analysis process for future teams and organisations.
 
